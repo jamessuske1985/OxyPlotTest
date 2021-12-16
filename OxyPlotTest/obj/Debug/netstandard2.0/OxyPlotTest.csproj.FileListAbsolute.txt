@@ -1,0 +1,15 @@
+/Users/jamess/Desktop/OxyPlotTest/OxyPlotTest/bin/Debug/netstandard2.0/OxyPlotTest.deps.json
+/Users/jamess/Desktop/OxyPlotTest/OxyPlotTest/bin/Debug/netstandard2.0/OxyPlotTest.dll
+/Users/jamess/Desktop/OxyPlotTest/OxyPlotTest/bin/Debug/netstandard2.0/ref/OxyPlotTest.dll
+/Users/jamess/Desktop/OxyPlotTest/OxyPlotTest/bin/Debug/netstandard2.0/OxyPlotTest.pdb
+/Users/jamess/Desktop/OxyPlotTest/OxyPlotTest/obj/Debug/netstandard2.0/OxyPlotTest.csproj.AssemblyReference.cache
+/Users/jamess/Desktop/OxyPlotTest/OxyPlotTest/obj/Debug/netstandard2.0/OxyPlotTest.GeneratedMSBuildEditorConfig.editorconfig
+/Users/jamess/Desktop/OxyPlotTest/OxyPlotTest/obj/Debug/netstandard2.0/App.xaml.g.cs
+/Users/jamess/Desktop/OxyPlotTest/OxyPlotTest/obj/Debug/netstandard2.0/MainPage.xaml.g.cs
+/Users/jamess/Desktop/OxyPlotTest/OxyPlotTest/obj/Debug/netstandard2.0/OxyPlotTest.AssemblyInfoInputs.cache
+/Users/jamess/Desktop/OxyPlotTest/OxyPlotTest/obj/Debug/netstandard2.0/OxyPlotTest.AssemblyInfo.cs
+/Users/jamess/Desktop/OxyPlotTest/OxyPlotTest/obj/Debug/netstandard2.0/OxyPlotTest.csproj.CoreCompileInputs.cache
+/Users/jamess/Desktop/OxyPlotTest/OxyPlotTest/obj/Debug/netstandard2.0/XamlC.stamp
+/Users/jamess/Desktop/OxyPlotTest/OxyPlotTest/obj/Debug/netstandard2.0/OxyPlotTest.dll
+/Users/jamess/Desktop/OxyPlotTest/OxyPlotTest/obj/Debug/netstandard2.0/ref/OxyPlotTest.dll
+/Users/jamess/Desktop/OxyPlotTest/OxyPlotTest/obj/Debug/netstandard2.0/OxyPlotTest.pdb

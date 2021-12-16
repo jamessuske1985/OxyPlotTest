@@ -1,0 +1,121 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:oxy="clr-namespace:OxyPlot.Xamarin.Forms;assembly=OxyPlot.Xamarin.Forms" xmlns:xct="http://xamarin.com/schemas/2020/toolkit" x:Class="OxyPlotTest.MainPage">
+    <StackLayout Padding="10">
+        <StackLayout Padding="10, 20, 0, 20">
+            <Label FontSize="Title" Text="Weekly Reports" FontAttributes="Bold"></Label>
+        </StackLayout>
+        <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" BackgroundColor="#f8f8f8">
+            <ImageButton Source="arrowLeft.png" x:Name="PreviousDateRange" Clicked="PreviousDateRange_Clicked" WidthRequest="40" HeightRequest="40" BackgroundColor="#02cc9d" Padding="10" />
+            <Label x:Name="DateRange" VerticalOptions="Center" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" WidthRequest="200" />
+            <ImageButton Source="arrowRight.png" x:Name="NextDateRange" Clicked="NextDateRange_Clicked" WidthRequest="40" HeightRequest="40" BackgroundColor="#02cc9d" Padding="10" />
+        </StackLayout>
+        <CollectionView x:Name="Kids" HeightRequest="600">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <xct:Expander Tapped="Expander_Tapped" ClassId="{Binding rowNumber}">
+                        <xct:Expander.Header>
+                            <Frame Padding="0" CornerRadius="10" Margin="5" BackgroundColor="White" HasShadow="False">
+                                <StackLayout>
+                                    <Grid BackgroundColor="#f8f8f8">
+                                        <StackLayout Padding="5" Orientation="Horizontal">
+                                            <Image x:Name="kidProfile" Source="{Binding image}" WidthRequest="75" HeightRequest="75" HorizontalOptions="Start" Aspect="AspectFill" />
+                                            <StackLayout Orientation="Vertical">
+                                                <Label Text="{Binding first_name}"></Label>
+                                                <StackLayout Orientation="Horizontal">
+                                                    <Label Text="Grade: " FontSize="Small"></Label>
+                                                    <Label Text="{Binding grade}" FontSize="Small"></Label>
+                                                </StackLayout>
+                                            </StackLayout>
+                                        </StackLayout>
+                                        <Image Margin="20" HorizontalOptions="End" Source="arrowDown.png" HeightRequest="15"></Image>
+                                    </Grid>
+                                </StackLayout>
+                            </Frame>
+                        </xct:Expander.Header>
+                        <Grid Padding="10">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto" />
+                                </Grid.ColumnDefinitions>
+                                <StackLayout x:Name="KidData">
+                                    <Grid WidthRequest="150" HeightRequest="150" HorizontalOptions="Center" VerticalOptions="Center" Padding="0,10,0,20">
+                                        
+                                        <StackLayout Grid.Column="0" Grid.Row="0" HorizontalOptions="Center" VerticalOptions="Center">
+                                            <Label FontSize="Large" Text="{Binding rewards}" FontAttributes="Bold" HorizontalOptions="Center" VerticalOptions="Center"></Label>
+                                            <Label FontSize="Small" Text="Points" FontAttributes="Bold" HorizontalOptions="Center" VerticalOptions="Center"></Label>
+                                            <Image Source="star.png" HeightRequest="25" HorizontalOptions="Center" VerticalOptions="Center"></Image>
+                                        </StackLayout>
+                                    </Grid>
+                                    <oxy:PlotView HeightRequest="200" WidthRequest="200" Model="{Binding chart}"></oxy:PlotView>
+                                    <Grid RowSpacing="0" ColumnSpacing="0">
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="Auto" />
+                                            <RowDefinition Height="Auto" />
+                                        </Grid.RowDefinitions>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="*" />
+                                            <ColumnDefinition Width="*" />
+                                        </Grid.ColumnDefinitions>
+                                        <StackLayout Grid.Row="1" Grid.Column="0" Orientation="Vertical" Padding="0">
+                                            <Frame BorderColor="LightGray" HasShadow="False" Margin="0" CornerRadius="0">
+                                                <StackLayout>
+                                                    <Label Text="Assigned Task" FontSize="Small" FontAttributes="Bold" HorizontalOptions="Start" TextColor="#fa5156"></Label>
+                                                    <Grid Padding="0,15,0,0">
+                                                        <Image Source="target.png" HeightRequest="25" HorizontalOptions="Start" />
+                                                        <Label Text="{Binding AssignedTask}" HorizontalOptions="End"></Label>
+                                                    </Grid>
+                                                </StackLayout>
+                                            </Frame>
+                                        </StackLayout>
+                                        <StackLayout Grid.Row="1" Grid.Column="1" Orientation="Vertical" Padding="0">
+                                            <Frame BorderColor="LightGray" HasShadow="False" Margin="0" CornerRadius="0">
+                                                <StackLayout>
+                                                    <Label Text="Completed Task" FontSize="Small" FontAttributes="Bold" HorizontalOptions="Start" TextColor="#fa5156"></Label>
+                                                    <Grid Padding="0,15,0,0">
+                                                        <Image Source="goal.png" HeightRequest="25" HorizontalOptions="Start" />
+                                                        <Label Text="{Binding CompletedTasks}" HorizontalOptions="End"></Label>
+                                                    </Grid>
+                                                </StackLayout>
+                                            </Frame>
+                                        </StackLayout>
+                                        <StackLayout Grid.Row="2" Grid.Column="0" Orientation="Vertical" Padding="0">
+                                            <Frame BorderColor="LightGray" HasShadow="False" Margin="0" CornerRadius="0">
+                                                <StackLayout>
+                                                    <Label Text="Correct Answers" FontSize="Small" FontAttributes="Bold" HorizontalOptions="Start" TextColor="#fa5156"></Label>
+                                                    <Grid Padding="0,15,0,0">
+                                                        <Image Source="check.png" HeightRequest="25" HorizontalOptions="Start" />
+                                                        <Label Text="{Binding correctAnswers}" HorizontalOptions="End"></Label>
+                                                    </Grid>
+                                                </StackLayout>
+                                            </Frame>
+                                        </StackLayout>
+                                        <StackLayout Grid.Row="2" Grid.Column="1" Orientation="Vertical" Padding="0">
+                                            <Frame BorderColor="LightGray" HasShadow="False" Margin="0" CornerRadius="0">
+                                                <StackLayout>
+                                                    <Label Text="Incorrect Answers" FontSize="Small" FontAttributes="Bold" HorizontalOptions="Start"  TextColor="#fa5156"></Label>
+                                                    <Grid Padding="0,15,0,0">
+                                                        <Image Source="cross.png" HeightRequest="25" HorizontalOptions="Start" />
+                                                        <Label Text="{Binding incorrectAnswers}" HorizontalOptions="End"></Label>
+                                                    </Grid>
+                                                </StackLayout>
+                                            </Frame>
+                                        </StackLayout>
+                                    </Grid>
+                                    <StackLayout Padding="10, 20, 10, 10" IsVisible="{Binding isCurrentTaskVisuable}">
+                                        <Frame BackgroundColor="#02cc9d" CornerRadius="5" HeightRequest="60">
+                                            <StackLayout>
+                                                <Label Text="Current Task" TextColor="White"></Label>
+                                                <Label Text="{Binding currentTask}" TextColor="White" FontAttributes="Bold" FontSize="Title"></Label>
+                                            </StackLayout>
+                                        </Frame>
+                                    </StackLayout>
+                                </StackLayout>
+                            </Grid>
+
+                    </xct:Expander>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+
+    </StackLayout>
+</ContentPage>
+
